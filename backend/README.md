@@ -1,14 +1,14 @@
-# This is Frantend part of the website 
+# This is Backend part of the website 
 
-This project frantend was created in nodejs . 
+This project backend was created in nodejs . 
 
 ## Teechnology used 
 
 In the project directory, we have use :
     <br>
     1> Node js <br>
-    2> React <br>
-  
+    2> Express <br>
+    3> For database we have used MongoDb
 
 ### `npm start`
 
