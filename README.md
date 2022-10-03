@@ -19,7 +19,7 @@ A month-long celebration from October 1st - 31st sponsored by [Digital Ocean](ht
 * Add your name to the `CONTRIBUTORS.md` file
 * go to issue section and contribute
 
-Choose one or all 3, make a pull request for your work and wait for it to be merged!
+
 
 ## Getting started
 * Fork this repository (Click the Fork button in the top right of this page, click your Profile Image)
