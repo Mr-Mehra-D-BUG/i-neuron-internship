@@ -2,9 +2,16 @@ const express = require("express");
 const app = express();
 const authRouter = require("./routes/authRouter");
 const connectDB = require("./DB/connect");
-const { notFoundErrorHandler, globalErrorHandler } = require("./middlewares/errorHandler");
+const {
+  notFoundErrorHandler,
+  globalErrorHandler,
+} = require("./middlewares/errorHandler");
 
-app.use("api/v1/auth", authRouter);
+// pasrse incomming request data as json
+app.use(express.json());
+
+
+app.use("/api/v1/auth", authRouter);
 
 app.use("*", notFoundErrorHandler); // api route not found error handling
 app.use(globalErrorHandler); //global error handler
