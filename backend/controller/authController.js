@@ -1,10 +1,17 @@
+const userModel = require("../model/userModel");
 
-
-async function signUpController(req, res){
-try{
-    console.log("this is signUpController");
+async function signUpController(req,res){
+ try{
+ const newUser = await userModel.create(req.body);
+ res.status(200).json({
+    user : newUser,
+    msg : "new user added"
+ })
 }catch(err){
-  console.log("this is error from signUpController");
+     res.status(500).json({
+        error : err,
+        msg : "oops"
+     });
 }
 }
 
