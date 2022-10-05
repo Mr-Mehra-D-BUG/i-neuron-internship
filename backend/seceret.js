@@ -1,5 +1,4 @@
 module.exports = {
-  DB_LINK:
-    "mongodb+srv://TaskManager:IKptmcvJwKM9Zdch@cluster0.pcgdr.mongodb.net/TASK-MANAGER?retryWrites=true&w=majority",
-
+  DB_LINK: "mongodb+srv://iNuronIntern:GcwuuBEsQB2wWmSO@cluster0.pcgdr.mongodb.net/Cake-Order?retryWrites=true&w=majority"
+   
 };
