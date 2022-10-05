@@ -1,6 +1,17 @@
+const { validationResult } = require("express-validator");
 const User = require("../models/user");
 
 async function signUpController(req, res, next) {
+  // return api fields level error validations
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return next({
+      status: 422,
+      message: "User input error",
+      data: errors.mapped(),
+    });
+  }
+
   try {
     // get signup payload from request body
     const { email, password, name } = req.body;
