@@ -4,7 +4,7 @@ const authRouter = require("./routes/authRouter");
 const connectDB = require("./DB/connect");
 const { notFoundErrorHandler, globalErrorHandler } = require("./middlewares/errorHandler");
 
-app.use("api/v1/auth", authRouter);
+app.use("/api/v1/auth", authRouter);
 
 app.use("*", notFoundErrorHandler); // api route not found error handling
 app.use(globalErrorHandler); //global error handler
