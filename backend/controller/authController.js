@@ -1,5 +1,6 @@
 const { validationResult } = require("express-validator");
 const User = require("../models/user");
+const { hashPassword } = require("../utils/password");
 
 async function signUpController(req, res, next) {
   // return api fields level error validations
@@ -24,8 +25,11 @@ async function signUpController(req, res, next) {
       return next({ status: 400, message: "User already exists" });
     }
 
+    // hash plain password
+
+    const hashedPass = await hashPassword(password);
     // create new user
-    const newUser = new User({ email, password, name });
+    const newUser = new User({ email, password: hashedPass, name });
 
     const saveUser = await newUser.save();
 
