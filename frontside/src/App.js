@@ -6,6 +6,7 @@ import Footer from './Components/Layout/Footer';
 import Signup from './Components/SignUpLogin/Signup';
 import Login from './Components/SignUpLogin/Login';
 import ForgetPassword from './Components/SignUpLogin/ForgetPassword';
+import Home from './Pages/Home';
 
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
       <AuthProvider>
          <NavBar />
          <Switch>
+         <Route path="/">
+            <Home />
+          </Route>
           <Route path="/signup">
             <Signup />
           </Route>
