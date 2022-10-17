@@ -16,7 +16,7 @@ function App() {
       <AuthProvider>
          <NavBar />
          <Switch>
-         <Route path="/">
+         <Route exact path="/">
             <Home />
           </Route>
           <Route path="/signup">
