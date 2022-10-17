@@ -1,5 +1,6 @@
 import React from 'react'
 import Categories from '../Components/Categories'
+import Products from '../Components/Products'
 import Slider from '../Components/Slider'
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
     <div>
         <Slider />
         <Categories />
+        <Products />
     </div>
   )
 }
