@@ -1,21 +1,21 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const authRouter = require("./routes/authRouter");
+const authRouter = require('./routes/authRouter');
 const connectDB = require("./DB/connect");
-const { notFoundErrorHandler, globalErrorHandler } = require("./middlewares/errorHandler");
+// json body parsor(middleware)
+app.use(express.json());
 
-app.use("api/v1/auth", authRouter);
 
-app.use("*", notFoundErrorHandler); // api route not found error handling
-app.use(globalErrorHandler); //global error handler
+app.use('/api/v1/auth' , authRouter);
+
 // server and DB
 const port = 3000;
-const start = () => {
-  try {
-    connectDB();
-    app.listen(port, console.log(`Server listening at port ${port}`));
-  } catch (error) {
-    console.log(error);
-  }
-};
+const start = ()=>{
+    try{
+       connectDB()
+       app.listen(port, console.log(`Server listening at port ${port}`));
+    }catch(error){
+        console.log(error);
+    }
+}
 start();
